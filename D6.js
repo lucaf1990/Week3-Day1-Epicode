@@ -78,14 +78,16 @@ ritornare la stringa originale senza alterarla.
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-function epify(stringa) {
-  let text1 = "EPICODE";
-  if (stringa.split(" ") === [0]) return epify("" + "EPICODE");
-  else if (stringa.split("") === [0]) return epify("EPICODE");
-}
-epify("");
-console.log(epify);
+const epify = (stringa) => {
+  if (stringa.startsWith("Epicode")) {
+    return stringa;
+  } else {
+    return "EPICODE " + stringa;
+  }
+};
 
+console.log(epify("EPICODE Italia"));
+console.log(epify("Ciaoooooooooo"));
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. 
  La funzione deve controllare che il parametro sia un multiplo di 3 o di 7.
@@ -105,45 +107,23 @@ function check3and7(numPos) {
 check3and7(41);
 console.log(check3and7);
 /* ESERCIZIO 7
- Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita 
+ Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa 
+ fornita 
  come parametro (es. "EPICODE" --> "EDOCIPE")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-/*
-reverseString("EPICODE");
 function reverseString(stringa) {
-  let singoLet = stringa.split("");
-  console.log(singoLet);
-  for (let i = 0; 0 < singoLet.length; ) 
+  let stringaTag = stringa.split("");
+  console.log(stringaTag);
+  let stringaCont = stringaTag.reverse();
+  console.log(stringaCont);
+  let risultato = stringaCont.join("");
+  console.log(risultato);
 }
 
-/*    let ciao = [];
-let splitString = ciao.split("");
-  let reverseArray = splitString.reverse();
-  let joinArray = reverseArray.join(" ");
-  return reverseString(joinArray);
-}
+console.log(reverseString("Ciao"));
 
-
-
-
-console.log(reverseString);
-/*function reverseString(str) {
-    // Step 1. Usa il metodo split() per restituire un nuovo array
-    var splitString = str.split(""); // var splitString = "hello".split("");
-    // ["h", "e", "l", "l", "o"]
- 
-    // Step 2. Usa il metodo reverse() per invertire l'array appena creato
-    var reverseArray = splitString.reverse(); // var reverseArray = ["h", "e", "l", "l", "o"].reverse();
-    // ["o", "l", "l", "e", "h"]
- 
-    // Step 3. Usa il metodo join() per unire tutti gli elementi della stringa in un array
-    var joinArray = reverseArray.join(""); // var joinArray = ["o", "l", "l", "e", "h"].join("");
-    // "olleh"
-    
-    //Step 4. Restituisci la stringa invertita
-    return joinArray; // "olleh"
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
