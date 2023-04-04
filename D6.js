@@ -123,23 +123,55 @@ function reverseString(stringa) {
 }
 
 console.log(reverseString("Ciao"));
+// /* ESERCIZIO 8
+//  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
+//  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
+// */
 
-/* ESERCIZIO 8
- Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
- La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
-*/
+const upperFirst = function (str) {
+  const arrParole = str.split(" ");
+  console.log(arrParole);
+  let unite = [];
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+  for (let i = 0; i < arrParole.length; i++) {
+    const parola = arrParole[i];
 
-/* ESERCIZIO 9
- Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
- della stringa originale.
-*/
+    const primaLet = parola.charAt(0);
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+    const fineParola = parola.slice(1);
 
-/* ESERCIZIO 10
- Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
-*/
+    unite.push(primaLet.toUpperCase() + fineParola);
+  }
+  return unite;
+};
+console.log(upperFirst("La funzione deve rendere maiuscola"));
 
-/* SCRIVI QUI LA TUA RISPOSTA */
+// /* ESERCIZIO 9
+//  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa.
+// La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
+//  della stringa originale.
+// */
+
+
+ const cutString = function (lettere){
+   const paroleSeparate = lettere.split(" ");
+  for(let i=0;i<paroleSeparate.length;i++){
+   paroleSeparate[i]
+ }
+ };
+
+// /* SCRIVI QUI LA TUA RISPOSTA */
+
+// /* ESERCIZIO 10
+//  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
+// */
+
+const giveMeRandom = function (n) {
+  const arrRandomNumber = [];
+  for (let i = 0; i < n; i++) {
+    let randomNumber = Math.floor(Math.random() * 11);
+    arrRandomNumber.push(randomNumber);
+  }
+  return arrRandomNumber;
+};
+console.log(giveMeRandom(34));
